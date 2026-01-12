@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Health Care{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'styles/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/footer.css' %}">
+
+
+    {% block css %}{% endblock %}
+</head>
+<body>
+
+    {% include 'nav.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+     {% include 'footer.html' %}
+
+</body>
+</html>

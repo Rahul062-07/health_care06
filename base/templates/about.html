@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}About Us | Health Care{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="about-hero">
+    <div class="about-hero-content">
+        <h1>About Health Care</h1>
+        <p>Transforming healthcare with technology, compassion, and intelligence.</p>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p>
+                Health Care is a digital healthcare platform designed to connect patients,
+                doctors, and intelligent health assistance in one secure ecosystem.
+                Our mission is to make healthcare accessible, reliable, and smart for everyone.
+            </p>
+        </div>
+        <div class="about-image"></div>
+    </div>
+</section>
+
+<section class="about-section reverse">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>What We Offer</h2>
+            <ul>
+                <li>Online doctor consultations</li>
+                <li>Patient health record management</li>
+                <li>AI-powered health chatbot</li>
+                <li>Symptom analysis & suggestions</li>
+                <li>Secure and responsive platform</li>
+            </ul>
+        </div>
+        <div class="about-image ai"></div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="stat-box">
+        <h3>100+</h3>
+        <p>Doctors</p>
+    </div>
+    <div class="stat-box">
+        <h3>5k+</h3>
+        <p>Patients</p>
+    </div>
+    <div class="stat-box">
+        <h3>24/7</h3>
+        <p>AI Support</p>
+    </div>
+    <div class="stat-box">
+        <h3>99%</h3>
+        <p>User Satisfaction</p>
+    </div>
+</section>
+
+<section class="vision">
+    <h2>Our Vision</h2>
+    <p>
+        To become a trusted digital healthcare partner by combining medical expertise
+        with artificial intelligence, ensuring better health outcomes for everyone.
+    </p>
+</section>
+
+{% endblock %}

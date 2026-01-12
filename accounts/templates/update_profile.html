@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}Update Profile | Health Care{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/update_profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="update-wrapper">
+    <div class="update-card">
+        <h1 class="update-title">Update Profile</h1>
+
+        <form method="POST" class="update-form">
+            {% csrf_token %}
+
+            <label>First Name</label>
+            <input type="text" name="first_name" value="{{ request.user.first_name }}" required>
+
+            <label>Last Name</label>
+            <input type="text" name="last_name" value="{{ request.user.last_name }}" required>
+
+            <label>Email</label>
+            <input type="email" name="email" value="{{ request.user.email }}" required>
+
+            <label>Username</label>
+            <input type="text" name="username" value="{{ request.user.username }}" required>
+
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

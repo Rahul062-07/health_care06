@@ -1,0 +1,46 @@
+{% load static %}
+
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h2>Health Care</h2>
+            <p>Your trusted digital healthcare partner with doctors, patients, and AI support.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="#">Doctor</a></li>
+                    <li><a href="#">Patient</a></li>
+                    <li><a href="#">AI Chat</a></li>
+                {% else %}
+                    <li><a href="{% url 'login_' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>Bengaluru, Karnataka</p>
+            <p>support@healthcare.com</p>
+            <p>+91 98765 43210</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Health Care. All rights reserved.</p>
+    </div>
+</footer>

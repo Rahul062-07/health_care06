@@ -1,0 +1,66 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}Contact Us | Health Care{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="contact-hero">
+    <div class="contact-hero-content">
+        <h1>Contact Us</h1>
+        <p>We’re here to help you with your health journey</p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="contact-container">
+
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Reach out to us for support, appointments, or general inquiries.</p>
+
+            <div class="info-box">
+                <span>📍</span>
+                <p>Bengaluru, Karnataka, India</p>
+            </div>
+
+            <div class="info-box">
+                <span>📞</span>
+                <p>+91 98765 43210</p>
+            </div>
+
+            <div class="info-box">
+                <span>✉️</span>
+                <p>support@healthcare.com</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="map-section">
+    <iframe 
+        src="https://maps.google.com/maps?q=Bengaluru%20Karnataka&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen
+        loading="lazy">
+    </iframe>
+
+</section>
+
+{% endblock %}

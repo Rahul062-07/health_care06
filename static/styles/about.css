@@ -1,0 +1,116 @@
+.about-hero{
+    height:80vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://plus.unsplash.com/premium_photo-1668898899024-02f028349666?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVkaWNhbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    
+}
+
+.about-hero-content h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.about-hero-content p{
+    font-size:1.2rem;
+    max-width:600px;
+    margin:auto;
+}
+
+.about-section{
+    padding:80px 10%;
+    background:#f9f9f9;
+}
+
+.about-section.reverse{
+    background:#fff;
+}
+
+.about-container{
+    display:flex;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    font-size:2rem;
+    margin-bottom:20px;
+    color:#1e8e8e;
+}
+
+.about-text p{
+    font-size:1rem;
+    line-height:1.7;
+    color:#555;
+}
+
+.about-text ul{
+    list-style:none;
+    padding:0;
+}
+
+.about-text ul li{
+    padding:10px 0;
+    font-size:1rem;
+    color:#444;
+}
+
+.about-image{
+    flex:1;
+    height:300px;
+    background:url('https://img.freepik.com/free-psd/healthcare-medical-service-ads-promotional-web-banner-template-design_84443-10603.jpg?semt=ais_hybrid&w=740&q=80') center/cover no-repeat;
+    border-radius:20px;
+}
+
+.about-image.ai{
+    background:url('https://birdeye.com/blog/wp-content/uploads/Feature-image-Boost-patient-engagement-with-AI-chatbot-for-healthcare-businesses-1140x596.jpg') center/cover no-repeat;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    padding:60px 10%;
+    background:#1e8e8e;
+    color:#fff;
+    text-align:center;
+}
+
+.stat-box h3{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.vision{
+    padding:80px 15%;
+    text-align:center;
+}
+
+.vision h2{
+    font-size:2.2rem;
+    margin-bottom:20px;
+    color:#1e8e8e;
+}
+
+.vision p{
+    font-size:1.1rem;
+    color:#555;
+}
+
+@media(max-width:768px){
+    .about-hero-content h1{
+        font-size:2.2rem;
+    }
+
+    .about-section{
+        padding:50px 5%;
+    }
+}

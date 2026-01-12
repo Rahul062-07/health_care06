@@ -1,0 +1,108 @@
+.contact-hero{
+    height:60vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://img.freepik.com/premium-photo/doctor-show-plese-contact-us-line-contact-hand-telephone-email-address-website-page-contact-us-e-mail_36325-3098.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-align:center;
+}
+
+.contact-hero-content h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.contact-hero-content p{
+    font-size:1.2rem;
+}
+
+.contact-section{
+    padding:80px 10%;
+    background:#f9f9f9;
+}
+
+.contact-container{
+    display:flex;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.contact-info{
+    flex:1;
+}
+
+.contact-info h2{
+    font-size:2rem;
+    margin-bottom:20px;
+    color:#1e8e8e;
+}
+
+.contact-info p{
+    color:#555;
+    margin-bottom:25px;
+}
+
+.info-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+    font-size:1.1rem;
+}
+
+.contact-form{
+    flex:1;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:1rem;
+}
+
+.contact-form textarea{
+    height:120px;
+    resize:none;
+}
+
+.contact-form button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#1e8e8e;
+    color:#fff;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact-form button:hover{
+    background:#156f6f;
+}
+
+.map-section iframe{
+    width:100%;
+    height:400px;
+    border:none;
+}
+
+@media(max-width:768px){
+    .contact-hero-content h1{
+        font-size:2.2rem;
+    }
+
+    .contact-section{
+        padding:50px 5%;
+    }
+}

@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}Profile | Health Care{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="profile-wrapper">
+    <div class="profile-card">
+        <h2 class="profile-title">User Profile</h2>
+
+        <div class="profile-info">
+            <div class="info-row">
+                <span>Username</span>
+                <p>{{ request.user.username }}</p>
+            </div>
+            <div class="info-row">
+                <span>First Name</span>
+                <p>{{ request.user.first_name }}</p>
+            </div>
+            <div class="info-row">
+                <span>Last Name</span>
+                <p>{{ request.user.last_name }}</p>
+            </div>
+            <div class="info-row">
+                <span>Email</span>
+                <p>{{ request.user.email }}</p>
+            </div>
+        </div>
+
+        <div class="profile-actions">
+            <a href="{% url 'update_profile' %}" class="profile-btn">Update Profile</a>
+            <a href="{% url 'change_password' %}" class="profile-btn">Change Password</a>
+            <a href="{% url 'logout_' %}" class="profile-btn logout">Logout</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
