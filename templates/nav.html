@@ -8,6 +8,7 @@
         <li><a href="{% url 'contact' %}">Contact</a></li>
 
         {% if user.is_authenticated %}
+<<<<<<< HEAD
         <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
         
         {% if user.doctor %}
@@ -17,9 +18,16 @@
             <li><a href="">Chat</a></li>
             <li><a href="{% url 'profile' %}">Profile</a></li>
             <li><a href="{% url 'logout_' %}">Logout</a></li>
+=======
+        <li><a href="">Doctor</a></li>
+        <li><a href="">Patient</a></li>
+        <li><a href="">Chat</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'logout_' %}">Logout</a></li>
+>>>>>>> f3f79963a0d0fa065deac1ca757c35662c98000a
         {% else %}
-            <li><a href="{% url 'register' %}">Register</a></li>
-            <li><a href="{% url 'login_' %}">Login</a></li>
+        <li><a href="{% url 'register' %}">Register</a></li>
+        <li><a href="{% url 'login_' %}">Login</a></li>
         {% endif %}
     </ul>
 </nav>
