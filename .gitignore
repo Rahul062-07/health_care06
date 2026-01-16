@@ -1,17 +1,14 @@
 # Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 
-# Virtual Environment
+# Virtual env
 venv/
-env/
 
 # Database
 db.sqlite3
 
-# Media files
+# Media (optional – ask team)
 media/
 
 # OS
