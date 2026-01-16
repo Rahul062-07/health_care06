@@ -1,0 +1,43 @@
+{% extends 'adminpanel/dashboard.html' %}
+{% load static %}
+
+{% block title %}Manage Testimonials{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/manage_testimonials.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="manage-testimonials">
+    <h2>Manage Testimonials</h2>
+    <a href="{% url 'add_testimonial' %}" class="add-btn">+ Add Testimonial</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Message</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for t in testimonials %}
+            <tr>
+                <td data-label="Name">{{ t.name }}</td>
+                <td data-label="Message">{{ t.message|truncatechars:50 }}</td>
+                <td data-label="Status">{% if t.is_active %}Active{% else %}Hidden{% endif %}</td>
+                <td data-label="Actions">
+                    <a href="{% url 'toggle_testimonial' t.id %}" class="toggle-btn">Toggle</a>
+                    <a href="{% url 'delete_testimonial' t.id %}" class="delete-btn">Delete</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4">No testimonials added yet.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

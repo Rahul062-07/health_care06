@@ -1,0 +1,109 @@
+.manage-testimonials {
+    padding: 30px;
+}
+
+.manage-testimonials h2 {
+    font-size: 28px;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.manage-testimonials a.add-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #22d3ee, #0f172a);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.manage-testimonials a.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.manage-testimonials table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.manage-testimonials th, .manage-testimonials td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #0f172a;
+}
+
+.manage-testimonials th {
+    background: #e0f2fe;
+    font-weight: 600;
+}
+
+.manage-testimonials tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.manage-testimonials tr:hover {
+    background: #f1f5f9;
+}
+
+.manage-testimonials td a {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-right: 5px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.manage-testimonials td a.toggle-btn {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.manage-testimonials td a.delete-btn {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.manage-testimonials td a:hover {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .manage-testimonials table, 
+    .manage-testimonials th, 
+    .manage-testimonials td {
+        display: block;
+        width: 100%;
+    }
+
+    .manage-testimonials th {
+        display: none;
+    }
+
+    .manage-testimonials td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .manage-testimonials td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #0f172a;
+    }
+
+    .manage-testimonials td a {
+        margin: 5px 0 0 0;
+    }
+}

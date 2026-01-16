@@ -1,0 +1,92 @@
+.admin-box{
+    max-width:520px;
+    margin:90px auto;
+    background:#ffffff;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.15);
+    animation:slideUp .6s ease;
+}
+
+.admin-box h2{
+    text-align:center;
+    font-size:28px;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:32px;
+}
+
+.admin-box form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.admin-box input,
+.admin-box textarea{
+    width:100%;
+    padding:14px 16px;
+    border-radius:12px;
+    border:1.5px solid #cbd5e1;
+    font-size:15px;
+    background:#f8fafc;
+    outline:none;
+    transition:.3s;
+}
+
+.admin-box textarea{
+    min-height:130px;
+    resize:none;
+}
+
+.admin-box input:focus,
+.admin-box textarea:focus{
+    background:#ffffff;
+    border-color:#38bdf8;
+    box-shadow:0 0 0 3px rgba(56,189,248,.15);
+}
+
+.admin-box input[type="file"]{
+    background:#ffffff;
+    padding:10px;
+}
+
+.admin-box button{
+    margin-top:10px;
+    padding:15px;
+    font-size:16px;
+    font-weight:600;
+    color:#ffffff;
+    background:linear-gradient(135deg,#38bdf8,#0f172a);
+    border:none;
+    border-radius:14px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.admin-box button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(15,23,42,.35);
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+    .admin-box{
+        margin:40px 16px;
+        padding:28px;
+    }
+
+    .admin-box h2{
+        font-size:24px;
+    }
+}

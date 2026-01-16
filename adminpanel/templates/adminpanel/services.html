@@ -1,0 +1,49 @@
+{% extends 'adminpanel/dashboard.html' %}
+{% load static %}
+
+{% block title %}Manage Services{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/manage_services.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="manage-services-container">
+
+    <div class="header">
+        <h2>Manage Services</h2>
+        <a href="{% url 'add_service' %}" class="add-btn">+ Add Service</a>
+    </div>
+
+    {% if services %}
+        <div class="service-list">
+            {% for s in services %}
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>{{ s.title }}</h3>
+                        <p>{{ s.description }}</p>
+                        <span class="status {% if s.is_active %}active{% else %}inactive{% endif %}">
+                            {{ s.is_active|yesno:"Active,Inactive" }}
+                        </span>
+                    </div>
+
+                    <div class="service-actions">
+                        <a href="{% url 'toggle_service' s.id %}" class="toggle-btn">
+                            {% if s.is_active %}Deactivate{% else %}Activate{% endif %}
+                        </a>
+
+                        <a href="{% url 'delete_service' s.id %}" class="delete-btn">
+                            Delete
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="empty">No services added</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

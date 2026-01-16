@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}Add Service | Admin{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/add_service.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="admin-box">
+    <h2>Add Service</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="text" name="title" placeholder="Service Title" required>
+
+        <textarea name="description" placeholder="Service Description" required></textarea>
+
+        <input type="file" name="icon">
+
+        <button type="submit">Add Service</button>
+    </form>
+</div>
+
+{% endblock %}

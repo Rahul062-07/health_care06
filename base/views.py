@@ -3,13 +3,20 @@ from .models import *
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from adminpanel.models import *
 
 # Create your views here.
 
 
 def home(request):
-    return render(request,'home.html')
-
+    doctors = Doctor.objects.filter(is_active=True)
+    testimonials = Testimonial.objects.filter(is_active=True)
+    services = Service.objects.filter(is_active=True)
+    return render(request, 'home.html', {
+        'doctors': doctors,
+        'testimonials': testimonials,
+        'services': services
+    })
 
 
 def about(request):

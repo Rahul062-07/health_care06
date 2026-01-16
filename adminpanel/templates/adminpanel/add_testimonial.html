@@ -1,0 +1,26 @@
+{% extends 'adminpanel/dashboard.html' %}
+{% load static %}
+
+{% block title %}Add Testimonial{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/add_testimonial.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="admin-box">
+    <h2>Add Testimonial</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Patient Name" required>
+
+        <textarea name="message" placeholder="Patient Message" required></textarea>
+
+        <button type="submit">Add Testimonial</button>
+    </form>
+</div>
+
+{% endblock %}
