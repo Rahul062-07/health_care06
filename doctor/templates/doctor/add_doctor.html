@@ -1,0 +1,64 @@
+{% extends 'doctor/doctor_base.html' %}
+{% load static %}
+
+{% block title %}Add Doctor{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4 py-5" style="background-color:#f4f6f9; min-height:90vh;">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow border-0" style="border-radius: 12px;">
+                <div class="card-header text-center" style="background-color:#2b5876; color:white; border-radius:12px 12px 0 0;">
+                    <h4 class="mb-0 fw-semibold">Add Doctor</h4>
+                </div>
+
+                <div class="card-body p-4" style="background-color:#ffffff; border-radius:0 0 12px 12px;">
+                    <form method="POST" class="row g-3" id="doctorForm">
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="col-md-6">
+                            <label for="{{ field.id_for_label }}" class="form-label fw-semibold text-secondary">
+                                {{ field.label }}
+                            </label>
+                            <div class="input-group">
+                                {{ field }}
+                            </div>
+                            {% if field.errors %}
+                                <small class="text-danger">{{ field.errors }}</small>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                        <div class="col-12 text-center mt-3">
+                            <button type="submit" class="btn btn-primary px-4 py-2 shadow-sm" style="border-radius:8px;">
+                                <i class="bi bi-person-plus"></i> Add Doctor
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Success message -->
+            <div id="successMsg" class="alert alert-success mt-4 text-center" style="display:none;">
+                ✅ Doctor added successfully!
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Optional success alert for user feedback
+    const form = document.getElementById("doctorForm");
+    const success = document.getElementById("successMsg");
+    form.addEventListener("submit", function() {
+        success.style.display = "block";
+        setTimeout(() => { success.style.display = "none"; }, 2000);
+    });
+
+    // Add Bootstrap styling to Django form fields
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("input, select, textarea").forEach(el => {
+            el.classList.add("form-control", "shadow-sm");
+        });
+    });
+</script>
+{% endblock %}

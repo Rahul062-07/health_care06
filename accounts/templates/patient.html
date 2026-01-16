@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+        }
+        
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+        
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ddd;
+        }
+        
+        h2 {
+            color: #2c3e50;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        table th,
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .btn {
+            padding: 8px 12px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Patient Profile -->
+        <div class="card">
+            <h2>Patient Profile</h2>
+            <p><strong>Name:</strong> {{ patient.name }}</p>
+            <p><strong>Age:</strong> {{ patient.age }}</p>
+            <p><strong>Gender:</strong> {{ patient.gender }}</p>
+            <p><strong>Blood Group:</strong> {{ patient.blood_group }}</p>
+            <p><strong>Phone:</strong> {{ patient.phone }}</p>
+            <p><strong>Email:</strong> {{ patient.email }}</p>
+        </div>
+
+        <!-- Appointments -->
+        <div class="card">
+            <h2>Appointments</h2>
+            <table>
+                <tr>
+                    <th>Doctor</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+                {% for app in appointments %}
+                <tr>
+                    <td>{{ app.doctor }}</td>
+                    <td>{{ app.date }}</td>
+                    <td>{{ app.status }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <!-- Prescriptions -->
+        <div class="card">
+            <h2>Prescriptions</h2>
+            <table>
+                <tr>
+                    <th>Medicine</th>
+                    <th>Dosage</th>
+                    <th>Duration (Days)</th>
+                </tr>
+                {% for p in prescriptions %}
+                <tr>
+                    <td>{{ p.medicine }}</td>
+                    <td>{{ p.dosage }}</td>
+                    <td>{{ p.days }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <!-- Actions -->
+        <div class="card">
+            <a href="#" class="btn">Book Appointment</a>
+            <a href="#" class="btn">View Reports</a>
+            <a href="#" class="btn">Pay Bills</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

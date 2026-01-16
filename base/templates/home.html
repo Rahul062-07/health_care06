@@ -1,3 +1,4 @@
+
 {% extends 'main.html' %}
 {% load static %}
 
@@ -8,6 +9,10 @@
 {% endblock %}
 
 {% block content %}
+
+ {% extends 'main.html' %} {% load static %} {% block title %}Home | Health Care{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'styles/home.css' %}"> {% endblock %} {% block content %}
+
 
 <!-- HERO -->
 <section class="hero">
