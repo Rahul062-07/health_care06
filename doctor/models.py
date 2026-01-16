@@ -1,5 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User 
+from django.db import models
+
+
 
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -26,3 +29,8 @@ class Appointment(models.Model):
 
     def __str__(self):
         return f"{self.patient.username} with {self.doctor.user.username} on {self.date}"
+
+
+
+
+

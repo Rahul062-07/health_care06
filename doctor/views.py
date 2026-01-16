@@ -1,7 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required,user_passes_test
 from .models import Doctor, Appointment
 from django.contrib.auth.models import User
+from django.utils.text import slugify
+from .forms import DoctorForm
+
+
+
 
 # List all doctors for patients
 def doctor_list(request):
@@ -38,3 +43,14 @@ def complete_appointment(request, pk):
     appointment.status = 'Completed'
     appointment.save()
     return redirect('doctor_dashboard')
+
+
+def add_doctor(request):
+    if request.method == 'POST':
+        form = DoctorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('doctor_list')  # redirect to your doctor list page
+    else:
+        form = DoctorForm()
+    return render(request, 'doctor/add_doctor.html', {'form': form})

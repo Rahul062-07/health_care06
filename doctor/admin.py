@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Doctor, Appointment
+from doctor.models import Doctor, Appointment
 
 @admin.register(Doctor)
 class DoctorAdmin(admin.ModelAdmin):
@@ -10,3 +10,4 @@ class DoctorAdmin(admin.ModelAdmin):
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = ('doctor', 'patient', 'date', 'time', 'status')
     list_filter = ('status', 'date')
+
