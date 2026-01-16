@@ -31,6 +31,3 @@ class Appointment(models.Model):
         return f"{self.patient.username} with {self.doctor.user.username} on {self.date}"
 
 
-
-
-
